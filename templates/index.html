@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ResumeIQ | AI Resume Analyzer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#F4F8FF;
+color:#1E293B;
+
+}
+
+a{
+text-decoration:none;
+}
+
+header{
+
+height:90px;
+background:white;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 60px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+position:sticky;
+top:0;
+z-index:999;
+
+}
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.logo img{
+
+width:65px;
+
+}
+
+.logo h1{
+
+font-size:30px;
+font-weight:700;
+color:#2563EB;
+
+}
+
+.logo p{
+
+font-size:14px;
+color:#64748B;
+
+}
+
+.profile{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.profile-circle{
+
+width:50px;
+height:50px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+font-weight:bold;
+font-size:20px;
+
+}
+
+.profile-text h3{
+
+font-size:18px;
+
+}
+
+.profile-text p{
+
+font-size:13px;
+color:#64748B;
+
+}
+
+/* HERO */
+
+.hero{
+
+width:90%;
+max-width:1300px;
+
+margin:40px auto;
+
+background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+border-radius:30px;
+
+padding:60px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+color:white;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+overflow:hidden;
+
+}
+
+.hero-left{
+
+width:55%;
+
+}
+
+.hero-left h1{
+
+font-size:52px;
+margin-bottom:20px;
+line-height:1.2;
+
+}
+
+.hero-left p{
+
+font-size:18px;
+line-height:1.8;
+opacity:.95;
+
+}
+
+.hero-buttons{
+
+margin-top:35px;
+
+display:flex;
+gap:20px;
+
+}
+
+.primary-btn{
+
+background:white;
+color:#2563EB;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+.secondary-btn{
+
+border:2px solid white;
+
+color:white;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+transition:.3s;
+
+}
+
+.secondary-btn:hover{
+
+background:white;
+color:#2563EB;
+
+}
+
+.hero-right{
+
+width:40%;
+
+display:flex;
+justify-content:center;
+
+}
+
+.ai-card{
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:25px;
+
+width:100%;
+
+}
+
+.ai-card h2{
+
+margin-bottom:25px;
+
+}
+
+.ai-card ul{
+
+list-style:none;
+
+}
+
+.ai-card li{
+
+padding:12px 0;
+font-size:17px;
+
+border-bottom:1px solid rgba(255,255,255,.2);
+
+}
+
+.container{
+
+width:90%;
+max-width:1300px;
+
+margin:auto;
+
+}
+/* ================= FEATURES ================= */
+
+.features{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin:50px auto;
+
+}
+
+.feature-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 18px 40px rgba(37,99,235,.18);
+
+}
+
+.feature-card h3{
+
+margin-top:15px;
+
+font-size:20px;
+
+color:#2563EB;
+
+}
+
+.feature-card p{
+
+margin-top:10px;
+
+color:#64748B;
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+/* ================= FORM ================= */
+
+.form-section{
+
+margin-top:60px;
+
+margin-bottom:60px;
+
+}
+
+.form-box{
+
+background:white;
+
+padding:45px;
+
+border-radius:30px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.form-title{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#2563EB;
+
+margin-bottom:10px;
+
+}
+
+.form-sub{
+
+color:#64748B;
+
+margin-bottom:35px;
+
+}
+
+.row{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+margin-bottom:25px;
+
+}
+
+label{
+
+display:block;
+
+margin-bottom:10px;
+
+font-weight:600;
+
+color:#334155;
+
+}
+
+select,
+textarea,
+input[type=file]{
+
+width:100%;
+
+padding:15px;
+
+border:2px solid #D6E4FF;
+
+border-radius:14px;
+
+font-size:16px;
+
+transition:.3s;
+
+outline:none;
+
+}
+
+select:focus,
+textarea:focus{
+
+border-color:#2563EB;
+
+box-shadow:0 0 10px rgba(37,99,235,.18);
+
+}
+
+textarea{
+
+resize:none;
+
+height:180px;
+
+}
+
+.upload-box{
+
+margin-top:15px;
+
+border:3px dashed #2563EB;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+background:#F8FBFF;
+
+transition:.3s;
+
+}
+
+.upload-box:hover{
+
+background:#EEF5FF;
+
+}
+
+.upload-box h2{
+
+font-size:24px;
+
+color:#2563EB;
+
+margin-bottom:10px;
+
+}
+
+.upload-box p{
+
+color:#64748B;
+
+margin-bottom:20px;
+
+}
+
+input[type=file]{
+
+border:none;
+
+background:white;
+
+cursor:pointer;
+
+}
+
+.submit-btn{
+
+margin-top:35px;
+
+width:100%;
+
+padding:18px;
+
+font-size:20px;
+
+font-weight:600;
+
+border:none;
+
+border-radius:16px;
+
+background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+color:white;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.submit-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 35px rgba(37,99,235,.30);
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-left,
+.hero-right{
+
+width:100%;
+
+}
+
+.hero-right{
+
+margin-top:40px;
+
+}
+
+.features{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.row{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+header{
+
+padding:20px;
+
+height:auto;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.hero{
+
+padding:35px;
+
+}
+
+.hero-left h1{
+
+font-size:34px;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.form-box{
+
+padding:25px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<img src="/static/logo.png" alt="Logo" width="70">
+
+<div>
+
+<h1>ResumeIQ</h1>
+
+<p>Analyze Smarter. Get Hired Faster.</p>
+
+</div>
+
+</div>
+
+<div class="profile">
+
+<div class="profile-circle">
+AI
+</div>
+
+<div class="profile-text">
+
+<h3>Welcome</h3>
+
+<p>AI Resume Analyzer</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+Build a Resume That Gets Interview Calls.
+</h1>
+
+<p>
+
+ResumeIQ uses Artificial Intelligence to analyze your resume,
+compare it with the Job Description,
+calculate ATS Score,
+identify missing skills,
+and generate professional suggestions.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#resumeForm" class="primary-btn">
+
+Start Analysis
+
+</a>
+
+<a href="#features" class="secondary-btn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="ai-card">
+
+<h2>AI Features</h2>
+
+<ul>
+
+<li>✔ ATS Score Prediction</li>
+
+<li>✔ Resume Parsing</li>
+
+<li>✔ Skill Matching</li>
+
+<li>✔ AI Resume Feedback</li>
+
+<li>✔ PDF Report</li>
+
+<li>✔ Company-wise Analysis</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<div class="container">
+
+<section id="features" class="features">
+
+<div class="feature-card">
+
+<h3>ATS Analysis</h3>
+
+<p>
+
+Professional ATS compatibility analysis using AI.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Skill Matching</h3>
+
+<p>
+
+Compare resume skills with company job requirements.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>AI Feedback</h3>
+
+<p>
+
+Get personalized resume improvement suggestions.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>PDF Report</h3>
+
+<p>
+
+Download a detailed ATS Resume Report instantly.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= FORM ================= -->
+
+<section class="form-section">
+
+<div class="form-box">
+
+<h1 class="form-title">
+
+Resume Analysis
+
+</h1>
+
+<p class="form-sub">
+
+Fill the details below to generate your AI Resume Report.
+
+</p>
+
+<form
+id="resumeForm"
+action="/upload"
+method="POST"
+enctype="multipart/form-data"
+>
+
+<div class="row">
+
+<div>
+
+<label>
+
+Select Company
+
+</label>
+
+<select name="company" required>
+
+<option value="">Choose Company</option>
+
+<option>Google</option>
+
+<option>Microsoft</option>
+
+<option>Amazon</option>
+
+<option>Deloitte</option>
+
+<option>Infosys</option>
+
+<option>TCS</option>
+
+<option>Accenture</option>
+
+<option>IBM</option>
+
+<option>Capgemini</option>
+
+<option>Cognizant</option>
+
+<option>Wipro</option>
+
+<option>Tech Mahindra</option>
+
+<option>Oracle</option>
+
+<option>Adobe</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+
+Select Job Role
+
+</label>
+
+<select name="job_role">
+
+<option>Software Engineer</option>
+
+<option>Python Developer</option>
+
+<option>Java Developer</option>
+
+<option>Full Stack Developer</option>
+
+<option>Frontend Developer</option>
+
+<option>Backend Developer</option>
+
+<option>AI / ML Engineer</option>
+
+<option>Data Analyst</option>
+
+<option>Cloud Engineer</option>
+
+<option>DevOps Engineer</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div>
+
+    <label>Job Description</label>
+
+    <textarea
+        name="job_description"
+        placeholder="Paste the complete Job Description here..."
+        required>
+    </textarea>
+
+</div>
+
+<div class="upload-box">
+
+    <h2>📄 Upload Resume</h2>
+
+    <p>
+        Upload your resume in PDF, DOC or DOCX format.
+    </p>
+
+    <input
+        type="file"
+        name="resume"
+        accept=".pdf,.doc,.docx"
+        required>
+
+</div>
+
+<button
+    type="submit"
+    class="submit-btn">
+
+    🚀 Analyze Resume
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+<footer
+style="
+background:#0F172A;
+padding:35px;
+text-align:center;
+color:white;
+margin-top:60px;
+">
+
+<h2>ResumeIQ</h2>
+
+<p style="margin-top:10px;">
+AI Resume Analyzer using Flask & Python
+</p>
+
+<p style="margin-top:15px;color:#94A3B8;">
+© 2026 ResumeIQ | All Rights Reserved
+</p>
+
+</footer>
+
+</body>
+
+</html>

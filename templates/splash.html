@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeIQ</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            background:linear-gradient(-45deg,#0F172A,#1E3A8A,#2563EB,#06B6D4);
+            background-size:400% 400%;
+            animation:bgMove 12s ease infinite;
+        }
+
+        @keyframes bgMove{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+
+        .glass{
+            width:700px;
+            padding:60px;
+            text-align:center;
+            background:rgba(255,255,255,.10);
+            backdrop-filter:blur(20px);
+            border-radius:30px;
+            border:1px solid rgba(255,255,255,.2);
+            box-shadow:0 20px 60px rgba(0,0,0,.35);
+            animation:fadeUp 1.2s;
+        }
+
+        @keyframes fadeUp{
+            from{
+                opacity:0;
+                transform:translateY(60px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .logo{
+            width:130px;
+            margin-bottom:20px;
+        }
+
+        h1{
+            color:white;
+            font-size:65px;
+            font-weight:700;
+            margin-bottom:10px;
+        }
+
+        h3{
+            color:#dbeafe;
+            margin-bottom:35px;
+        }
+
+        p{
+            color:#E2E8F0;
+            font-size:20px;
+            line-height:35px;
+            margin-bottom:40px;
+        }
+
+        .btn-start{
+            padding:18px 55px;
+            border:none;
+            border-radius:50px;
+            font-size:22px;
+            color:white;
+            background:linear-gradient(90deg,#3B82F6,#8B5CF6);
+            transition:.4s;
+            text-decoration:none;
+            display:inline-block;
+        }
+
+        .btn-start:hover{
+            transform:translateY(-5px);
+            box-shadow:0 15px 40px rgba(59,130,246,.45);
+            color:white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="glass">
+
+    <!-- Later manam generated logo ni images folder lo pedtham -->
+    <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+
+    <h1>ResumeIQ</h1>
+
+    <h3>Analyze Smarter. Get Hired Faster.</h3>
+
+    <p>
+        AI Powered Resume Analysis Platform<br>
+        ATS Score • Skill Matching • Company Recommendation • AI Suggestions
+    </p>
+
+    <a href="/login" class="btn-start">
+        Get Started →
+    </a>
+
+</div>
+
+</body>
+</html>

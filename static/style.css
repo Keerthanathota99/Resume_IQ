@@ -1,0 +1,307 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ---------- Background ---------- */
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    background:linear-gradient(135deg,#0B1120,#1E1B4B,#4C1D95,#7C3AED);
+}
+
+/* ---------- Login & Register ---------- */
+
+.login-body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+
+    width:430px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.45);
+
+    text-align:center;
+
+    animation:fadeIn 1s ease;
+}
+
+/* ---------- Logo ---------- */
+
+.logo{
+
+    width:220px;
+    height:220px;
+    object-fit:contain;
+    margin-bottom:25px;
+    filter:drop-shadow(0 0 25px rgba(56,189,248,.8));
+}
+
+/* ---------- Heading ---------- */
+
+h1{
+
+    font-size:45px;
+
+    font-weight:700;
+
+    background:linear-gradient(90deg,#38BDF8,#A855F7);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:10px;
+}
+
+h2{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+    font-weight:500;
+}
+
+.tagline{
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+    margin-bottom:30px;
+
+    font-style:italic;
+}
+
+/* ---------- Inputs ---------- */
+
+input,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.10);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.20);
+
+    margin-bottom:18px;
+
+    transition:.3s;
+}
+
+input::placeholder{
+
+    color:#D1D5DB;
+}
+
+input:focus,
+select:focus{
+
+    border-color:#38BDF8;
+
+    box-shadow:0 0 15px rgba(56,189,248,.5);
+}
+
+/* ---------- Button ---------- */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:linear-gradient(90deg,#7C3AED,#06B6D4);
+
+    transition:.35s;
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(124,58,237,.5);
+}
+
+/* ---------- Links ---------- */
+
+p{
+
+    color:#CBD5E1;
+
+    margin-top:20px;
+}
+
+a{
+
+    color:#38BDF8;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+a:hover{
+
+    color:white;
+}
+
+/* ---------- Dashboard ---------- */
+
+.container{
+
+    width:95%;
+
+    max-width:1100px;
+
+    background:rgba(255,255,255,.96);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+    animation:fadeIn 1s ease;
+}
+
+/* ---------- Resume Box ---------- */
+
+.resume-box{
+
+    background:#F8FAFC;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    border:1px solid #CBD5E1;
+
+    height:300px;
+
+    overflow-y:auto;
+
+    text-align:left;
+
+    white-space:pre-wrap;
+}
+
+/* ---------- Progress ---------- */
+
+.progress{
+
+    width:100%;
+
+    height:28px;
+
+    background:#E2E8F0;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+}
+
+.progress-bar{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#06B6D4,#22C55E);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:bold;
+
+    border-radius:50px;
+}
+
+/* ---------- List ---------- */
+
+ul{
+
+    list-style:none;
+
+    padding:0;
+}
+
+li{
+
+    background:#EEF2FF;
+
+    margin:10px 0;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    color:#1E293B;
+}
+
+/* ---------- Animation ---------- */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

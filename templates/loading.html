@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>ResumeIQ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#0F172A,#2563EB,#7C3AED);
+
+overflow:hidden;
+
+}
+
+.card{
+
+background:white;
+
+padding:50px;
+
+border-radius:25px;
+
+text-align:center;
+
+width:500px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
+
+h1{
+
+font-size:42px;
+
+color:#2563EB;
+
+}
+
+h2{
+
+margin-top:20px;
+
+color:#475569;
+
+}
+
+.progress{
+
+margin-top:35px;
+
+height:20px;
+
+background:#E2E8F0;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.bar{
+
+height:100%;
+
+width:0%;
+
+background:linear-gradient(90deg,#2563EB,#7C3AED);
+
+animation:load 4s linear forwards;
+
+}
+
+@keyframes load{
+
+0%{width:0%;}
+
+100%{width:100%;}
+
+}
+
+.status{
+
+margin-top:25px;
+
+font-size:18px;
+
+color:#64748B;
+
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.4;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🤖 ResumeIQ</h1>
+
+<h2>Analyzing Resume...</h2>
+
+<div class="progress">
+
+<div class="bar"></div>
+
+</div>
+
+<div class="status">
+
+Finding Skills...<br><br>
+
+Calculating ATS Score...<br><br>
+
+Generating AI Suggestions...
+
+</div>
+
+</div>
+
+</body>
+
+</html>
